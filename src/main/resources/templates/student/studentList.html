@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>학생정보관리</title>
+</head>
+<body>
+<form th:action="@{/students/inquiry}"
+      method="get">
+    대학<input type="text" name="univ">
+    이름<input type="text" name="name">
+    학점<input type="number" name="point" step="0.1">
+    <input type="submit" value="검색">
+</form>
+
+<table>
+    <tr><th>학생번호</th><th>학생이름</th><th>대학</th></tr>
+    <tr th:each="student : ${students}">
+        <td name="id" th:text="${student.id}">번호</td>
+        <td>
+            <a href="" th:href="@{/students/studentInfo/{id}(id=${student.id})}"
+               th:text="${student.name}">
+                이름
+            </a>
+        </td>
+        <td th:text="${student.univ}">대학</td>
+        <td>
+            <a href="" th:href="@{/students/studentUpdate/{id}(id=${student.id})}">
+                수정하기
+            </a>
+        </td>
+    </tr>
+</table>
+<a href="" th:href="@{/students/addStudent}">
+    새로운 학생 등록하기
+</a>
+</body>
+</html>

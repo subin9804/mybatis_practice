@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>학생 정보</title>
+</head>
+<body>
+<ul th:object="${student}">
+    번호 <li th:text="*{id}"></li>
+    학생명 <li th:text="*{name}"></li>
+    대학 <li th:text="*{univ}"></li>
+    생일 <li th:text="*{birth}"></li>
+    이메일 <li th:text="*{email}"></li>
+    성적 <li th:text="*{point}"></li>
+</ul>
+</body>
+</html>

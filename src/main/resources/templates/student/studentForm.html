@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/students/addStudent}" action=""
+      th:object="${student}" method="post">
+    이름<input type="text" name="name" ><br>
+    학교<input type="text" name="univ" ><br>
+    생일<input type="text" name="birth" ><br>
+    이메일<input type="email" name="email" ><br>
+    <input type="submit" value="입력">
+</form>
+</body>
+</html>
